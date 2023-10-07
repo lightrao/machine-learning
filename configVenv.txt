@@ -1,0 +1,23 @@
+// 1. Check conda is installed and in your PATH
+conda -V
+// 2. Check conda is up to date
+conda activate base
+conda update conda
+conda update --all
+conda update anaconda
+conda deactivate
+// 3. Create a virtual environment for your project
+conda create -n lightTf python=3.9 tensorflow pydotplus jupyter
+// 4. Activate your virtual environment
+conda activate lightTf
+// 5. Install additional Python packages to a virtual environment
+conda install -n lightTf matplotlib
+// 6. Deactivate your virtual environment
+conda deactivate
+// 7. Delete a no longer needed virtual environment
+conda remove -n lightTf --all
+
+// list all the packages and their versions in your current environment and save them to a text file
+conda list --export > requirements.txt
+// create a new environment with the name <envname> and install the packages listed in the requirements.txt
+conda create --name <envname> --file requirements.txt
